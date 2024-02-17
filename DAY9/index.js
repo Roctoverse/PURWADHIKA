@@ -38,3 +38,28 @@ function bubbleSort(arr) {
 }
 
 console.log(bubbleSort([5,3,8,4]));
+
+function selectionSort(arr) {
+    // menguraikan isi dari array
+    for(let i = 0 ; i < arr.length; i++) {
+        let minPosition = i
+        // untuk mencari nilai terkecil di setiap putaran i
+        for(let j = i ; j < arr.length; j++) {
+            if(arr[j] < arr[minPosition]) {
+                minPosition = j;
+            }
+        } 
+
+        if(arr[i] != arr[minPosition]) {
+            let temp = arr[i]
+            arr[i] = arr[minPosition];
+            arr[minPosition] = temp 
+        }
+
+        
+    }
+    
+    return arr;
+}
+
+console.log(selectionSort([29,72,98,13,87,66,52,51,36]));
